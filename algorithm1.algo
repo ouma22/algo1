@@ -1,0 +1,22 @@
+ALGORITHM algorithm_1
+VAR
+    phrase:STRING
+    nb_words:INTEGER:=1
+    i:INTEGER
+    nb_voyelle:INTEGER:=0
+BEGIN
+   REPEAT
+       read (phrase)
+   UNTIL (phrase[length(phrase)-1]=".")
+    END_IF
+    write (length(phrase))
+    FOR i FROM 0 TO length(phrase)-1 STEP 1  DO
+       IF (phrase[i]=" ") THEN
+           nb_words:=nb_words+1
+       END_IF
+       IF ((phrase[i]='a') OR (phrase[i]='e') OR (phrase[i]='i') OR (phrase[i]='o') OR (phrase[i]='u') OR (phrase[i]='y') ) THEN
+           nb_voyelle:=nb_voyelle+1
+       END_IF
+    END_FOR
+    write (nb_words)
+END
